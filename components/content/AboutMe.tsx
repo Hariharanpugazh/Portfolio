@@ -10,7 +10,7 @@ const AboutMe = () => {
       </h2>
 
       <p className='text-base text-gray-400'>
-        I am a passionate and versatile developer with over +{calculateDuration('2021-01-01', false)} of JavaScript experience and a constant interest in learning new technologies. I am currently learning the path to be a DevOps and master tools or practices such as "Linux, AWS, CI/CD, Docker, Kubernetes, Jenkins and Terraform" to perform cost optimized, reliable and secure full software delivery and maintenance.
+       My journey began with a deep interest in emerging technologies, leading to a focus on programming and software development. They built a foundation through online courses and hands-on projects in Python and Machine Learning, working on projects like Deepfake Detection using Hugging Face models and analyzing manufacturing process data. Passionate about problem-solving and innovation, the user is committed to continuous learning, especially in AI. Currently pursuing a B.Tech in Artificial Intelligence and Data Science, they have a strong focus on frontend web development and contribute to open-source projects while staying updated on AI and automation trends.
       </p>
 
     </AnimationContainer>

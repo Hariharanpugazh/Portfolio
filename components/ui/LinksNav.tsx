@@ -5,19 +5,19 @@ import { NavItemHeaderAnimation } from '@/types';
 
 export const navItemsSelected: { [key: string]: NavItemHeaderAnimation } = {
   '/': {
-    name: 'home',
+    name: 'Home',
     x: 1,
     y: -3,
     w: '60px',
   },
   '/about': {
-    name: 'about',
+    name: 'About',
     x: 65,
     y: -3,
     w: '60px',
   },
   '/projects': {
-    name: 'projects',
+    name: 'Projects',
     x: 130,
     y: -3,
     w: '75px',

@@ -2,13 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-html,body {
+html, body {
   scroll-behavior: smooth;
 }
 
 body, * {
-  box-sizing: content-box;
-  cursor: none;
+  box-sizing: border-box; /* Changed to border-box for better sizing */
+  cursor: default; /* Default cursor */
 }
 
 ::selection {
@@ -29,7 +29,7 @@ body, * {
   backdrop-filter: blur(1px);
   background-color: #0000005e;
   transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
-  cursor: none !important;
+  cursor: none !important; /* Hides the default cursor */
 }
 
 @media screen and (max-width: 768px) {
@@ -50,7 +50,7 @@ body, * {
 }
 
 #__next {
-  @apply bg-gray-900;
+  @apply bg-gray-900; /* Default background for dark mode */
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -199,10 +199,8 @@ pre::-webkit-scrollbar {
 }
 
 pre {
-  -ms-overflow-style: none;
-  /* IE and Edge */
-  scrollbar-width: none;
-  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 .rehype-code-title {
@@ -253,37 +251,75 @@ table {
   margin: 0 !important;
 }
 
-.darkBackgroundCirclesColors {
-  inset: 0px;
-  position: absolute;
-  z-index: -1;
-  background: radial-gradient(
-      circle at top left,
-      rgba(139, 0, 255, 0.22) 0%,
-      rgba(0, 0, 0, 0) 15%,
-      rgba(128, 128, 128, 0) 100%
-    ),
-    radial-gradient(
-      circle at 85% 30%,
-      rgba(0, 136, 255, 0.28) 0%,
-      rgba(0, 0, 0, 0) 30%,
-      rgba(128, 128, 128, 0) 15%
-    );
+/* Light Theme Colors */
+html {
+  --light-bg: #000000; /* Background color */
+  --light-text: #000000; /* Main text color */
+  --light-heading: #000000; /* Dark black for headings */
+  --light-paragraph: #000000; /* Light black for paragraphs */
 }
 
-@media (min-width: 900px) {
-  .darkBackgroundCirclesColors {
-    background: radial-gradient(
-        circle at 15% 55%,
-        rgba(139, 0, 255, 0.22) 0%,
-        rgba(0, 0, 0, 0) 25%,
-        rgba(128, 128, 128, 0) 100%
-      ),
-      radial-gradient(
-        circle at 85% 30%,
-        rgba(0, 136, 255, 0.28) 0%,
-        rgba(0, 0, 0, 0) 30%,
-        rgba(128, 128, 128, 0) 25%
-      );
+/* Dark Theme Colors */
+@media (prefers-color-scheme: dark) {
+  html {
+    --dark-bg: #111111; /* Background color */
+    --dark-text: #ffffff; /* Main text color */
+    --dark-heading: #ffffff; /* White for headings */
+    --dark-paragraph: #dddddd; /* Light grey for paragraphs */
   }
 }
+
+/* Apply theme colors */
+body {
+  background-color: var(--light-bg);
+  color: var(--light-text);
+}
+
+.dark body {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--light-heading); /* Dark black for headings in light mode */
+}
+
+.dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+  color: var(--dark-heading); /* White for headings in dark mode */
+}
+
+p {
+  color: var(--light-paragraph); /* Light black for paragraphs in light mode */
+}
+
+.dark p {
+  color: var(--dark-paragraph); /* Light grey for paragraphs in dark mode */
+}
+
+/* Add any other specific styles for icons here */
+.icon {
+  color: inherit; /* Inherit text color for icons */
+}
+
+.dark .icon {
+  color: inherit; /* Inherit text color for icons */
+}
+
+/* Additional styling for icons and skills */
+.skill-icon {
+  color: inherit; /* Ensure skill icons inherit text color */
+}
+
+.dark .skill-icon {
+  color: inherit; /* Ensure skill icons inherit text color */
+}
+
+/* Additional styles for link visibility */
+a {
+  color: #0000ee; /* Default link color in light mode */
+}
+
+.dark a {
+  color: #00bfff; /* Bright link color in dark mode */
+}
+
