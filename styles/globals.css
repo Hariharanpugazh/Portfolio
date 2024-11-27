@@ -1,0 +1,325 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  scroll-behavior: smooth;
+}
+
+body, * {
+  box-sizing: border-box; /* Changed to border-box for better sizing */
+  cursor: default; /* Default cursor */
+}
+
+::selection {
+  background-color: #fefefe;
+  color: #000;
+}
+
+/* CUSTOM CURSOR  */
+
+.flare {
+  position: fixed;
+  border: 2px solid #ffffff2b;
+  border-radius: 50%;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 999999 !important;
+  backdrop-filter: blur(1px);
+  background-color: #0000005e;
+  transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+  cursor: none !important; /* Hides the default cursor */
+}
+
+@media screen and (max-width: 768px) {
+  .flare {
+    display: none;
+    width: 0;
+    height: 0;
+    transition: width 0.2s ease-in-out, height 0.2s ease-in-out,
+      opacity 0.2s ease-in-out;
+  }
+}
+
+.flare.pointer {
+  display: none;
+  opacity: 0 !important;
+  transition: width 0.2s ease-in-out, height 0.2s ease-in-out,
+    opacity 0.2s ease-in-out;
+}
+
+#__next {
+  @apply bg-gray-900; /* Default background for dark mode */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.capsize::before {
+  content: '';
+  margin-bottom: -0.098em;
+  display: table;
+}
+
+.capsize::after {
+  content: '';
+  margin-top: -0.219em;
+  display: table;
+}
+
+.skip-nav {
+  @apply absolute px-4 py-3 transition-transform duration-200 transform -translate-y-12 -left-1/4 focus:top-4 focus:translate-y-3 top-8;
+}
+
+#skip {
+  scroll-margin-top: 1.125rem;
+}
+
+@supports not (backdrop-filter: none) {
+  .sticky-nav {
+    backdrop-filter: none;
+    @apply bg-opacity-100;
+  }
+}
+
+.prose .anchor {
+  @apply absolute invisible no-underline;
+
+  margin-left: -1em;
+  padding-right: 0.5em;
+  width: 80%;
+  max-width: 700px;
+  cursor: pointer;
+}
+
+.anchor:hover {
+  @apply visible;
+}
+
+.prose a {
+  @apply transition-all;
+}
+
+.prose .anchor:after {
+  @apply text-gray-700;
+  content: '#';
+}
+
+.prose *:hover > .anchor {
+  @apply visible;
+}
+
+.prose pre {
+  @apply border border-gray-700 bg-gray-900;
+}
+
+.prose code {
+  @apply text-gray-200 px-1 py-0.5 border border-gray-800 rounded-lg bg-gray-900;
+}
+
+.prose pre code {
+  @apply text-gray-200 p-0;
+  border: initial;
+}
+
+.prose img {
+  /* Don't apply styles to next/image */
+  @apply m-0;
+}
+
+.prose > :first-child {
+  /* Override removing top margin, causing layout shift */
+  margin-top: 1.25em !important;
+  margin-bottom: 1.25em !important;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  @apply text-gray-300;
+}
+
+.token.punctuation {
+  @apply text-gray-300;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  @apply text-green-500;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  @apply text-purple-500;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  @apply text-yellow-500;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  @apply text-blue-500;
+}
+
+.token.function,
+.token.class-name {
+  @apply text-pink-500;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  @apply text-yellow-500;
+}
+
+code[class*='language-'],
+pre[class*='language-'] {
+  @apply text-gray-50;
+}
+
+pre::-webkit-scrollbar {
+  display: none;
+}
+
+pre {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.rehype-code-title {
+  @apply px-5 py-3 font-mono text-sm font-bold border border-b-0 rounded-t-lg text-gray-200 border-gray-700 bg-gray-900;
+}
+
+.rehype-code-title + pre {
+  @apply mt-0 rounded-t-none;
+}
+
+.highlight-line {
+  @apply block px-4 -mx-4 border-l-4 border-blue-500 bg-gray-900;
+}
+
+/* Remove Safari input shadow on mobile */
+input[type='text'],
+input[type='email'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.metric-card > a {
+  @apply no-underline;
+}
+
+.metric-card > p {
+  @apply my-2;
+}
+
+.step > h3 {
+  @apply my-0;
+}
+
+.prose .tweet a {
+  text-decoration: inherit;
+  font-weight: inherit;
+}
+
+table {
+  display: block;
+  max-width: fit-content;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.prose .callout > p {
+  margin: 0 !important;
+}
+
+/* Light Theme Colors */
+html {
+  --light-bg: #000000; /* Background color */
+  --light-text: #000000; /* Main text color */
+  --light-heading: #000000; /* Dark black for headings */
+  --light-paragraph: #000000; /* Light black for paragraphs */
+}
+
+/* Dark Theme Colors */
+@media (prefers-color-scheme: dark) {
+  html {
+    --dark-bg: #111111; /* Background color */
+    --dark-text: #ffffff; /* Main text color */
+    --dark-heading: #ffffff; /* White for headings */
+    --dark-paragraph: #dddddd; /* Light grey for paragraphs */
+  }
+}
+
+/* Apply theme colors */
+body {
+  background-color: var(--light-bg);
+  color: var(--light-text);
+}
+
+.dark body {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--light-heading); /* Dark black for headings in light mode */
+}
+
+.dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+  color: var(--dark-heading); /* White for headings in dark mode */
+}
+
+p {
+  color: var(--light-paragraph); /* Light black for paragraphs in light mode */
+}
+
+.dark p {
+  color: var(--dark-paragraph); /* Light grey for paragraphs in dark mode */
+}
+
+/* Add any other specific styles for icons here */
+.icon {
+  color: inherit; /* Inherit text color for icons */
+}
+
+.dark .icon {
+  color: inherit; /* Inherit text color for icons */
+}
+
+/* Additional styling for icons and skills */
+.skill-icon {
+  color: inherit; /* Ensure skill icons inherit text color */
+}
+
+.dark .skill-icon {
+  color: inherit; /* Ensure skill icons inherit text color */
+}
+
+/* Additional styles for link visibility */
+a {
+  color: #0000ee; /* Default link color in light mode */
+}
+
+.dark a {
+  color: #00bfff; /* Bright link color in dark mode */
+}
+

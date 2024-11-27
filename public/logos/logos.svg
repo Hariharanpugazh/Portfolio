@@ -1,0 +1,46 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <!-- HTML Logo -->
+  <symbol id="html-logo" viewBox="0 0 32 32">
+    <path fill="#E44D26" d="M1.5 0h29l-2.64 29.72L16.04 32l-11.81-2.77L1.5 0z"/>
+    <path fill="#F16529" d="M16.04 29.45l9.142-2.997L27.347 2H16.04v27.45z"/>
+    <path fill="#FFF" d="M7.426 9.42l.244 2.692h8.37v-2.692H7.426zm.498 5.497l.244 2.691h7.628v-2.691H7.924z"/>
+  </symbol>
+
+  <!-- CSS Logo -->
+  <symbol id="css-logo" viewBox="0 0 32 32">
+    <path fill="#1572B6" d="M1.5 0h29l-2.64 29.72L16.04 32l-11.81-2.77L1.5 0z"/>
+    <path fill="#33A9DC" d="M16.04 29.45l9.142-2.997L27.347 2H16.04v27.45z"/>
+    <path fill="#FFF" d="M7.426 9.42l.244 2.692h8.37v-2.692H7.426zm.498 5.497l.244 2.691h7.628v-2.691H7.924z"/>
+  </symbol>
+
+  <!-- JavaScript Logo -->
+  <symbol id="javascript-logo" viewBox="0 0 32 32">
+    <rect fill="#F7DF1E" width="32" height="32"/>
+    <text x="8" y="20" font-family="Arial, sans-serif" font-size="14" fill="#000">JS</text>
+  </symbol>
+
+  <!-- TypeScript Logo -->
+  <symbol id="typescript-logo" viewBox="0 0 32 32">
+    <rect fill="#007ACC" width="32" height="32"/>
+    <text x="7" y="20" font-family="Arial, sans-serif" font-size="14" fill="#FFF">TS</text>
+  </symbol>
+
+  <!-- Node.js Logo -->
+  <symbol id="nodejs-logo" viewBox="0 0 32 32">
+    <circle cx="16" cy="16" r="15" fill="#8CC84B"/>
+    <text x="10" y="20" font-family="Arial, sans-serif" font-size="12" fill="#FFF">Node.js</text>
+  </symbol>
+
+  <!-- React Logo -->
+  <symbol id="react-logo" viewBox="0 0 32 32">
+    <circle cx="16" cy="16" r="6" fill="#61DAFB"/>
+    <ellipse cx="16" cy="16" rx="15" ry="6" fill="none" stroke="#61DAFB" stroke-width="2"/>
+  </symbol>
+
+  <!-- MongoDB Logo -->
+  <symbol id="mongodb-logo" viewBox="0 0 32 32">
+    <path fill="#A6A385" d="M16 1c7.7 0 14 6.3 14 14s-6.3 14-14 14S2 22.7 2 15 8.3 1 16 1z"/>
+    <text x="10" y="20" font-family="Arial, sans-serif" font-size="10" fill="#FFF">MongoDB</text>
+  </symbol>
+</svg>
